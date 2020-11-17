@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
   }
@@ -23,12 +24,15 @@ class HomePage extends StatelessWidget {
       length: 4, 
       initialIndex: 1,
       child: Scaffold(
+        backgroundColor: Color.fromRGBO(21, 33, 33,1),
       appBar: AppBar(
         centerTitle: false,
         title: Text("WhatsApp",
-        style: TextStyle(fontWeight: FontWeight.bold),
+        style: TextStyle(fontWeight: FontWeight.bold,
+        color: Color.fromRGBO(161, 161, 161, 1)
         ),
-        backgroundColor: Color(0xFF075E54),
+        ),
+        backgroundColor: Color.fromRGBO(24, 39, 46,1),
         bottom: TabBar(
           indicatorColor: Colors.white,
           tabs: <Widget>[
@@ -37,13 +41,13 @@ class HomePage extends StatelessWidget {
               iconMargin: EdgeInsets.symmetric(horizontal:1.0),
             ),
              Tab(
-              child: Text("CHATS", style: TextStyle(fontWeight: FontWeight.bold)),
+              child: Text("CHATS", style: TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(161, 161, 161, 1)),),
             ),
              Tab(
-              child: Text("STATUS",style: TextStyle(fontWeight: FontWeight.bold),),
+              child: Text("STATUS",style: TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(161, 161, 161, 1)),),
             ),
             Tab(
-              child: Text("CALLS",style: TextStyle(fontWeight: FontWeight.bold),),
+              child: Text("CALLS",style: TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(161, 161, 161, 1)),),
             ),
          
         ],
@@ -52,9 +56,11 @@ class HomePage extends StatelessWidget {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
+            color: Color.fromRGBO(161, 161, 161, 1),
             onPressed: (){}),
           IconButton(
             icon: Icon(Icons.more_vert_rounded), 
+            color: Color.fromRGBO(161, 161, 161, 1),
             onPressed: (){})
         ]
       ),
@@ -66,6 +72,11 @@ class HomePage extends StatelessWidget {
           Calls(),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        child: Icon(Icons.message),
+        backgroundColor:Color.fromRGBO(64, 168, 116,1),
+        ),
       ),
     );
   }
